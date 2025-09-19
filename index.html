@@ -1,0 +1,1819 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="http-equiv=edge">
+    <link rel="stylesheet" href="./style">
+    <title>ACPO TERAPIA CAPILAR t</title>
+</head>
+
+<style>
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #034510 100%);
+    }
+
+header {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(15px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    }
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    }
+
+.logo {
+    font-size: 2rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #942b05 0%, #034510 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-decoration: none;
+    }
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+    }
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    }
+
+.nav-menu a:hover {
+    color: #764ba2;
+    }
+
+.nav-menu a:after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #034510;
+    transition: width 0.3s ease;
+    }
+
+.nav-menu a:hover:after {
+    width: 100%;
+    }
+
+.cart-container {
+    position: relative;
+    }
+
+.cart-btn {
+    background: linear-gradient(135deg, #667eea 0%, #034510 100%);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(118, 75, 162, 0.3);
+    }
+
+.cart-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(118, 75, 162, 0.4);
+    }
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #ff4757;
+    color: white;
+    border-radius: 50%;
+    min-width: 22px;
+    height: 22px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    animation: bounce 0.3s ease;
+    }
+
+@keyframes bounce {
+    0%, 20%, 60%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    80% { transform: translateY(-5px); }
+    }
+
+/* SEÇÃO HERO */
+.hero {
+    padding: 140px 0 100px;
+    text-align: center;
+    color: white;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.95) 0%, rgba(1, 81, 11, 0.629) 100%);
+    position: relative;
+    overflow: hidden;
+    }
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.05)" points="0,0 1000,300 1000,1000 0,700"/></svg>');
+    background-size: cover;
+    }
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    }
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    font-weight: 800;
+    }
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.95;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    }
+
+.cta-btn {
+    background: rgba(255, 255, 255, 0.95);
+    color: #034510;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+.cta-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    background: white;
+    }
+
+.cta-btn.secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    }
+
+.cta-btn.secondary:hover {
+    background: white;
+    color: #034510;
+    }
+
+/* SEÇÕES DE PRODUTOS */
+.section {
+    padding: 100px 0;
+    background: white;
+    position: relative;
+    }
+
+.section:nth-child(even) {
+    background: linear-gradient(135deg, #f8f9ff 0%, #f0f2ff 100%);
+    }
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    }
+
+.section-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #667eea 0%, #034510 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+    }
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+    }
+
+/* GRID DE PRODUTOS */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+    }
+
+.product-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255,255,255,0.2);
+    position: relative;
+    }
+
+.product-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+    }
+
+.product-image {
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(135deg, #66eac5 0%, #8ba24b 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 4rem;
+    position: relative;
+    overflow: hidden;
+    }
+
+.product-image::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: shimmer 3s ease-in-out infinite;
+    }
+
+@keyframes shimmer {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+    }
+
+.product-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #46060b;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    }
+
+.product-info {
+    padding: 2rem;
+    }
+
+.product-category {
+    color: #034510;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+    }
+
+.product-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 0.8rem;
+    }
+
+.product-description {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    }
+
+.product-price {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #034510;
+    margin-bottom: 1.5rem;
+    }
+
+.product-price .original-price {
+    font-size: 1rem;
+    color: #999;
+    text-decoration: line-through;
+    margin-left: 0.5rem;
+    }
+
+.product-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    }
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    border: 2px solid #eee;
+    border-radius: 25px;
+    overflow: hidden;
+    }
+
+.quantity-btn {
+    background: #f8f9fa;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    }
+
+.quantity-btn:hover {
+    background: #034510;
+    color: white;
+    }
+
+.quantity-input {
+    border: none;
+    text-align: center;
+    width: 50px;
+    padding: 8px 4px;
+    font-weight: 600;
+    background: white;
+    }
+
+.add-to-cart-btn {
+    flex: 1;
+    background: linear-gradient(135deg, #667eea 0%, #034510 100%);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(118, 75, 162, 0.3);
+    }
+
+.add-to-cart-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(118, 75, 162, 0.4);
+    }
+
+.add-to-cart-btn.added {
+    background: #034510;
+    animation: success 0.6s ease;
+    }
+
+@keyframes success {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+    }
+
+/* MODAL DO CARRINHO */
+.cart-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 3000;
+    backdrop-filter: blur(5px);
+    }
+
+.cart-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 0;
+    border-radius: 25px;
+    width: 95%;
+    max-width: 900px;
+    max-height: 90vh;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+    }
+
+.cart-header {
+    background: linear-gradient(135deg, #667eea 0%, #034510 100%);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    }
+
+.cart-header h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    }
+
+.close-cart {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    }
+
+.close-cart:hover {
+    background: rgba(255,255,255,0.3);
+    transform: rotate(90deg);
+    }
+
+    .cart-body {
+    max-height: 60vh;
+    overflow-y: auto;
+    padding: 2rem;
+    }
+
+.cart-empty {
+    text-align: center;
+    padding: 3rem;
+    color: #666;
+    }
+
+.cart-empty-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+    }
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid #eee;
+    transition: all 0.3s ease;
+    }
+
+.cart-item:hover {
+    background: #f8f9ff;
+        }
+
+.cart-item-image {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #eab166 0%, #034510 100%);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    margin-right: 1rem;
+    }
+
+.cart-item-info {
+    flex: 1;
+    }
+
+.cart-item-name {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    }
+
+.cart-item-category {
+    color: #666;
+    font-size: 0.9rem;
+    }
+
+.cart-item-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    }
+
+.cart-quantity-controls {
+    display: flex;
+    align-items: center;
+    border: 2px solid #eee;
+    border-radius: 20px;
+    overflow: hidden;
+    }
+
+.cart-quantity-btn {
+    background: #f8f9fa;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    }
+
+.cart-quantity-btn:hover {
+    background: #034510;
+    color: white;
+    }
+
+.cart-quantity-display {
+    padding: 8px 16px;
+    background: white;
+    border: none;
+    text-align: center;
+    font-weight: 600;
+    min-width: 50px;
+    }
+
+.cart-item-price {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #034510;
+    min-width: 100px;
+    text-align: right;
+    }
+
+.remove-item-btn {
+    background: #ff4757;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+        }
+
+.remove-item-btn:hover {
+    background: #ff3838;
+    transform: scale(1.1);
+        }
+
+.cart-summary {
+    background: #f8f9ff;
+    padding: 2rem;
+    border-top: 1px solid #eee;
+    }
+
+.cart-total {
+    text-align: center;
+    margin-bottom: 2rem;
+    }
+
+.cart-total-amount {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #034510;
+    margin-bottom: 0.5rem;
+    }
+
+.cart-total-items {
+    color: #666;
+    font-size: 1.1rem;
+    }
+
+/* SEÇÃO DE PAGAMENTO */
+.payment-section {
+    margin-top: 2rem;
+    }
+
+.payment-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #333;
+        }
+
+.payment-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+    }
+
+.payment-method {
+    padding: 1.5rem;
+    border: 2px solid #eee;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    background: white;
+    }
+
+.payment-method:hover {
+    border-color: #034510;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+.payment-method.selected {
+    border-color: #034510;
+    background: rgba(118, 75, 162, 0.05);
+    }
+
+.payment-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    }
+
+.payment-name {
+    font-weight: 600;
+    color: #333;
+    }
+
+.payment-forms {
+    margin-top: 2rem;
+    }
+
+.payment-form {
+    display: none;
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    }
+
+.payment-form.active {
+    display: block;
+    animation: fadeInUp 0.3s ease;
+    }
+
+@keyframes fadeInUp {
+    from {
+           opacity: 0;
+           transform: translateY(20px);
+        }
+    to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        }
+
+ .form-row {
+           display: flex;
+           gap: 1rem;
+           margin-bottom: 1rem;
+        }
+
+.form-group {
+           flex: 1;
+           margin-bottom: 1.5rem;
+        }
+
+.form-group label {
+           display: block;
+           margin-bottom: 0.5rem;
+           font-weight: 600;
+           color: #333;
+        }
+
+.form-group input,
+.form-group select {
+           width: 100%;
+           padding: 1rem;
+           border: 2px solid #eee;
+           border-radius: 10px;
+           font-size: 1rem;
+           transition: all 0.3s ease;
+           background: #f8f9fa;
+        }
+
+.form-group input:focus,
+.form-group select:focus {
+           border-color: #034510;
+           background: white;
+           outline: none;
+           box-shadow: 0 0 0 3px rgba(118, 75, 162, 0.1);
+        }
+
+.pix-section {
+           text-align: center;
+        }
+
+.pix-qr-code {
+           width: 200px;
+           height: 200px;
+           background: #333;
+           margin: 2rem auto;
+           border-radius: 15px;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           color: white;
+           font-size: 1rem;
+           flex-direction: column;
+           gap: 0.5rem;
+        }
+
+.pix-key {
+           background: #f8f9fa;
+           padding: 1rem;
+           border-radius: 10px;
+           margin: 1rem 0;
+           border: 1px dashed #034510;
+        }
+
+.copy-pix-btn {
+           background: #034510;
+           color: white;
+           border: none;
+           padding: 8px 16px;
+           border-radius: 20px;
+           cursor: pointer;
+           margin-left: 1rem;
+           transition: all 0.3s ease;
+        }
+
+.copy-pix-btn:hover {
+           background: #667eea;
+        }
+
+.checkout-btn {
+           width: 100%;
+           background: linear-gradient(135deg, #667eea 0%, #034510 100%);
+           color: white;
+           border: none;
+           padding: 1.2rem;
+           border-radius: 15px;
+           font-size: 1.3rem;
+           font-weight: 700;
+           cursor: pointer;
+           transition: all 0.3s ease;
+           margin-top: 2rem;
+           box-shadow: 0 8px 25px rgba(118, 75, 162, 0.3);
+        }
+
+.checkout-btn:hover {
+           transform: translateY(-3px);
+           box-shadow: 0 12px 35px rgba(118, 75, 162, 0.4);
+        }
+
+.checkout-btn:disabled {
+           background: #ccc;
+           cursor: not-allowed;
+           transform: none;
+           box-shadow: none;
+        }
+
+/* FOOTER */
+footer {
+           background: #333;
+           color: white;
+           padding: 4rem 0 2rem;
+           text-align: center;
+        }
+
+.footer-content {
+           display: grid;
+           grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+           gap: 2rem;
+           margin-bottom: 2rem;
+        }
+
+.footer-section h3 {
+           color: #034510;
+           margin-bottom: 1rem;
+           font-size: 1.3rem;
+        }
+
+.footer-section p,
+.footer-section li {
+           margin-bottom: 0.5rem;
+           opacity: 0.9;
+        }
+
+.social-links {
+           display: flex;
+           gap: 1rem;
+           justify-content: center;
+           margin-top: 1rem;
+        }
+
+.social-link {
+           background: #034510;
+           color: white;
+           width: 40px;
+           height: 40px;
+           border-radius: 50%;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           text-decoration: none;
+           transition: all 0.3s ease;
+        }
+
+.social-link:hover {
+           background: #667eea;
+           transform: translateY(-3px);
+        }
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+.nav-menu {
+            display: none;
+            }
+            
+.hero h1 {
+            font-size: 2.5rem;
+        }
+            
+.section-title {
+            font-size: 2rem;
+        }
+            
+.products-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+            
+.cart-content {
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+        }
+            
+.form-row {
+            flex-direction: column;
+            gap: 0;
+        }
+            
+.cta-buttons {
+            flex-direction: column;
+            align-items: center;
+        }
+        }
+</style>
+</head>
+<body>
+<!-- HEADER -->
+<header>
+    <nav class="container">
+    <a href="#" class="logo">✨ ACPO TERAPIA CAPILAR</a>
+    <ul class="nav-menu">
+        <li><a href="#home">Início</a></li>
+        <li><a href="#services">Serviços</a></li>
+        <li><a href="#products">Produtos</a></li>
+        <li><a href="#contact">Contato</a></li>
+    </ul>
+    <div class="cart-container">
+        <button class="cart-btn" onclick="toggleCart()">
+        🛒 Carrinho
+    <span class="cart-count" id="cartCount">0</span>
+        </button>
+    </div>
+    </nav>
+    </header>
+
+<!-- HERO SECTION -->
+    <section class="hero" id="home">
+    <div class="container">
+    <div class="hero-content">
+    <h1>ACPO TERAPIA CAPILAR</h1>
+        <p>Transforme sua beleza com nossos serviços exclusivos e produtos profissionais. Experimente a excelência em cuidados estéticos.</p>
+    <div class="cta-buttons">
+    <a href="#services" class="cta-btn">Ver Serviços</a>
+    <a href="#products" class="cta-btn secondary">Comprar Produtos</a>
+    </div>
+    </div>
+    </div>
+    </section>
+
+<!-- SERVIÇOS -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nossos Serviços</h2>
+                <p class="section-subtitle">Profissionais especializados para cuidar da sua beleza com os melhores tratamentos</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">💇‍♀️</div>
+                    <div class="product-info">
+                        <div class="product-category">Cabelo</div>
+                        <h3 class="product-name">Corte Feminino Completo</h3>
+                        <p class="product-description">Corte profissional com lavagem, condicionamento e finalização personalizada</p>
+                        <div class="product-price">R$ 50,00</div>
+                        <div class="product-actions">
+                            <div class="quantity-selector">
+                                <button class="quantity-btn" onclick="changeQuantity(this, -1)">-</button>
+                                <input type="number" class="quantity-input" value="1" min="1" readonly>
+                                <button class="quantity-btn" onclick="changeQuantity(this, 1)">+</button>
+                            </div>
+                            <button class="add-to-cart-btn" onclick="addToCart('Corte Feminino Completo', 50.00, 'Cabelo', '💇‍♀️', this)">
+                                Agendar Serviço
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">💇‍♂️</div>
+                    <div class="product-info">
+                        <div class="product-category">Cabelo</div>
+                        <h3 class="product-name">Corte Masculino Premium</h3>
+                        <p class="product-description">Corte moderno com barba, lavagem e styling profissional</p>
+                        <div class="product-price">R$ 55,00</div>
+                        <div class="product-actions">
+                            <div class="quantity-selector">
+                                <button class="quantity-btn" onclick="changeQuantity(this, -1)">-</button>
+                                <input type="number" class="quantity-input" value="1" min="1" readonly>
+                                <button class="quantity-btn" onclick="changeQuantity(this, 1)">+</button>
+                            </div>
+                            <button class="add-to-cart-btn" onclick="addToCart('Corte Masculino Premium', 30.00, 'Cabelo', '💇‍♂️', this)">
+                                Agendar Serviço
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">🎨</div>
+                    <div class="product-badge">Popular</div>
+                    <div class="product-info">
+                        <div class="product-category">Cabelo</div>
+                        <h3 class="product-name">Coloração Profissional</h3>
+                        <p class="product-description">Coloração completa com produtos premium e tratamento pós-cor</p>
+                        <div class="product-price">R$ 145,00 <span class="original-price">R$ 180,00</span></div>
+                        <div class="product-actions">
+                            <div class="quantity-selector">
+                                <button class="quantity-btn" onclick="changeQuantity(this, -1)">-</button>
+                                <input type="number" class="quantity-input" value="1" min="1" readonly>
+                                <button class="quantity-btn" onclick="changeQuantity(this, 1)">+</button>
+                            </div>
+                            <button class="add-to-cart-btn" onclick="addToCart('Coloração Profissional', 145.00, 'Cabelo', '🎨', this)">
+                                Agendar Serviço
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">💅</div>
+                    <div class="product-info">
+                        <div class="product-category">Unhas</div>
+                        <h3 class="product-name">Manicure & Pedicure</h3>
+                        <p class="product-description">Cuidado completo das unhas com esmaltação e hidratação</p>
+                        <div class="product-price">R$ 45,00</div>
+                        <div class="product-actions">
+                            <div class="quantity-selector">
+                                <button class="quantity-btn" onclick="changeQuantity(this, -1)">-</button>
+                                <input type="number" class="quantity-input" value="1" min="1" readonly>
+                                <button class="quantity-btn" onclick="changeQuantity(this, 1)">+</button>
+                            </div>
+                            <button class="add-to-cart-btn" onclick="addToCart('Manicure & Pedicure', 45.00, 'Unhas', '💅', this)">
+                                Agendar Serviço
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">✨</div>
+                    <div class="product-info">
+                        <div class="product-category">Estética</div>
+                        <h3 class="product-name">Limpeza de Pele</h3>
+                        <p class="product-description">Limpeza profunda com extração e hidratação facial</p>
+                        <div class="product-price">R$ 95,00</div>
+                        <div class="product-actions">
+                            <div class="quantity-selector">
+                                <button class="quantity-btn" onclick="changeQuantity(this, -1)">-</button>
+                                <input type="number" class="quantity-input" value="1" min="1" readonly>
+                                <button class="quantity-btn" onclick="changeQuantity(this, 1)">+</button>
+                            </div>
+                            <button class="add-to-cart-btn" onclick="addToCart('Limpeza de Pele', 95.00, 'Estética', '✨', this)">
+                                Agendar Serviço
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">💆‍♀️</div>
+                    <div class="product-info">
+                        <div class="product-category">Relaxamento</div>
+                        <h3 class="product-name">Massagem Relaxante</h3>
+                        <p class="product-description">Massagem terapêutica para alívio do stress e tensões</p>
+                        <div class="product-price">R$ 85,00</div>
+                        <div class="product-actions">
+                            <div class="quantity-selector">
+                                <button class="quantity-btn" onclick="changeQuantity(this, -1)">-</button>
+                                <input type="number" class="quantity-input" value="1" min="1" readonly>
+                                <button class="quantity-btn" onclick="changeQuantity(this, 1)">+</button>
+                            </div>
+                            <button class="add-to-cart-btn" onclick="addToCart('Massagem Relaxante', 85.00, 'Relaxamento', '💆‍♀️', this)">
+                                Agendar Serviço
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUTOS -->
+    <section class="section" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Produtos Exclusivos</h2>
+                <p class="section-subtitle">Leve para casa produtos profissionais de alta qualidade</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">🧴</div>
+                    <div class="product-info">
+                        <div class="product-category">Cabelo</div>
+                        <h3 class="product-name">Shampoo Hidratante Premium</h3>
+                        <p class="product-description">Fórmula exclusiva para todos os tipos de cabelo com ácido hialurônico</p>
+                        <div class="product-price">R$ 52,00</div>
+                        <div class="product-actions">
+                            <div class="quantity-selector">
+                                <button class="quantity-btn" onclick="changeQuantity(this, -1)">-</button>
+                                <input type="number" class="quantity-input" value="1" min="1" readonly>
+                                <button class="quantity-btn" onclick="changeQuantity(this, 1)">+</button>
+                            </div>
+                            <button class="add-to-cart-btn" onclick="addToCart('Shampoo Hidratante Premium', 52.00, 'Cabelo', '🧴', this)">
+                                Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">🧴</div>
+                    <div class="product-badge">Novo</div>
+                    <div class="product-info">
+                        <div class="product-category">Cabelo</div>
+                        <h3 class="product-name">Condicionador Nutritivo</h3>
+                        <p class="product-description">Condicionador enriquecido com óleos naturais e proteínas</p>
+                        <div class="product-price">R$ 45,00</div>
+                        <div class="product-actions">
+                            <div class="quantity-selector">
+                                <button class="quantity-btn" onclick="changeQuantity(this, -1)">-</button>
+                                <input type="number" class="quantity-input" value="1" min="1" readonly>
+                                <button class="quantity-btn" onclick="changeQuantity(this, 1)">+</button>
+                            </div>
+                            <button class="add-to-cart-btn" onclick="addToCart('Condicionador Nutritivo', 45.00, 'Cabelo', '🧴', this)">
+                                Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">💄</div>
+                    <div class="product-info">
+                        <div class="product-category">Maquiagem</div>
+                        <h3 class="product-name">Kit Maquiagem Profissional</h3>
+                        <p class="product-description">Kit completo com bases, pó compacto, batom e paleta de sombras</p>
+                        <div class="product-price">R$ 165,00 <span class="original-price">R$ 220,00</span></div>
+                        <div class="product-actions">
+                            <div class="quantity-selector">
+                                <button class="quantity-btn" onclick="changeQuantity(this, -1)">-</button>
+                                <input type="number" class="quantity-input" value="1" min="1" readonly>
+                                <button class="quantity-btn" onclick="changeQuantity(this, 1)">+</button>
+                            </div>
+                            <button class="add-to-cart-btn" onclick="addToCart('Kit Maquiagem Profissional', 165.00, 'Maquiagem', '💄', this)">
+                                Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">🧴</div>
+                    <div class="product-badge">Bestseller</div>
+                    <div class="product-info">
+                        <div class="product-category">Cabelo</div>
+                        <h3 class="product-name">Máscara Capilar Reconstrutora</h3>
+                        <p class="product-description">Tratamento intensivo para cabelos danificados e quimicamente tratados</p>
+                        <div class="product-price">R$ 68,00</div>
+                        <div class="product-actions">
+                            <div class="quantity-selector">
+                                <button class="quantity-btn" onclick="changeQuantity(this, -1)">-</button>
+                                <input type="number" class="quantity-input" value="1" min="1" readonly>
+                                <button class="quantity-btn" onclick="changeQuantity(this, 1)">+</button>
+                            </div>
+                            <button class="add-to-cart-btn" onclick="addToCart('Máscara Capilar Reconstrutora', 68.00, 'Cabelo', '🧴', this)">
+                                Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">💅</div>
+                    <div class="product-info">
+                        <div class="product-category">Unhas</div>
+                        <h3 class="product-name">Esmalte Gel Longa Duração</h3>
+                        <p class="product-description">Esmalte em gel com tecnologia UV, disponível em 20 cores</p>
+                        <div class="product-price">R$ 28,00</div>
+                        <div class="product-actions">
+                            <div class="quantity-selector">
+                                <button class="quantity-btn" onclick="changeQuantity(this, -1)">-</button>
+                                <input type="number" class="quantity-input" value="1" min="1" readonly>
+                                <button class="quantity-btn" onclick="changeQuantity(this, 1)">+</button>
+                            </div>
+                            <button class="add-to-cart-btn" onclick="addToCart('Esmalte Gel Longa Duração', 28.00, 'Unhas', '💅', this)">
+                                Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">✨</div>
+                    <div class="product-info">
+                        <div class="product-category">Pele</div>
+                        <h3 class="product-name">Sérum Facial Anti-Idade</h3>
+                        <p class="product-description">Sérum com vitamina C, retinol e ácido hialurônico para pele jovem</p>
+                        <div class="product-price">R$ 125,00</div>
+                        <div class="product-actions">
+                            <div class="quantity-selector">
+                                <button class="quantity-btn" onclick="changeQuantity(this, -1)">-</button>
+                                <input type="number" class="quantity-input" value="1" min="1" readonly>
+                                <button class="quantity-btn" onclick="changeQuantity(this, 1)">+</button>
+                            </div>
+                            <button class="add-to-cart-btn" onclick="addToCart('Sérum Facial Anti-Idade', 125.00, 'Pele', '✨', this)">
+                                Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL DO CARRINHO -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2>🛒 Meu Carrinho</h2>
+                <p>Revise seus itens antes de finalizar</p>
+                <button class="close-cart" onclick="toggleCart()">✕</button>
+            </div>
+            
+            <div class="cart-body" id="cartBody">
+                <div class="cart-empty" id="cartEmpty">
+                    <div class="cart-empty-icon">🛒</div>
+                    <h3>Carrinho Vazio</h3>
+                    <p>Adicione serviços ou produtos para continuar</p>
+                </div>
+                <div id="cartItems"></div>
+            </div>
+            
+            <div class="cart-summary" id="cartSummary" style="display: none;">
+                <div class="cart-total">
+                    <div class="cart-total-amount" id="cartTotalAmount">R$ 0,00</div>
+                    <div class="cart-total-items" id="cartTotalItems">0 itens no carrinho</div>
+                </div>
+                
+                <div class="payment-section">
+                    <h3 class="payment-title">💳 Escolha a Forma de Pagamento</h3>
+                    
+                    <div class="payment-methods">
+                        <div class="payment-method" onclick="selectPaymentMethod('credit')" data-method="credit">
+                            <div class="payment-icon">💳</div>
+                            <div class="payment-name">Cartão de Crédito</div>
+                            <small>Em até 12x sem juros</small>
+                        </div>
+                        
+                        <div class="payment-method" onclick="selectPaymentMethod('debit')" data-method="debit">
+                            <div class="payment-icon">💳</div>
+                            <div class="payment-name">Cartão de Débito</div>
+                            <small>À vista</small>
+                        </div>
+                        
+                        <div class="payment-method" onclick="selectPaymentMethod('pix')" data-method="pix">
+                            <div class="payment-icon">📱</div>
+                            <div class="payment-name">PIX</div>
+                            <small>5% de desconto</small>
+                        </div>
+                    </div>
+                    
+                    <div class="payment-forms">
+                        <!-- FORMULÁRIO CARTÃO DE CRÉDITO -->
+                        <div class="payment-form" id="creditForm">
+                            <h4>💳 Dados do Cartão de Crédito</h4>
+                            <div class="form-group">
+                                <label>Número do Cartão</label>
+                                <input type="text" placeholder="0000 0000 0000 0000" maxlength="19" 
+                                       oninput="formatCardNumber(this)" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Nome no Cartão</label>
+                                <input type="text" placeholder="Nome como está impresso no cartão" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Validade</label>
+                                    <input type="text" placeholder="MM/AA" maxlength="5" 
+                                           oninput="formatExpiry(this)" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>CVV</label>
+                                    <input type="text" placeholder="123" maxlength="4" 
+                                           oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Parcelas</label>
+                                <select id="installments" required>
+                                    <option value="">Selecione o parcelamento</option>
+                                    <option value="1">1x - À vista (sem juros)</option>
+                                    <option value="2">2x - sem juros</option>
+                                    <option value="3">3x - sem juros</option>
+                                    <option value="6">6x - sem juros</option>
+                                    <option value="12">12x - sem juros</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <!-- FORMULÁRIO CARTÃO DE DÉBITO -->
+                        <div class="payment-form" id="debitForm">
+                            <h4>💳 Dados do Cartão de Débito</h4>
+                            <div class="form-group">
+                                <label>Número do Cartão</label>
+                                <input type="text" placeholder="0000 0000 0000 0000" maxlength="19" 
+                                       oninput="formatCardNumber(this)" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Nome no Cartão</label>
+                                <input type="text" placeholder="Nome como está impresso no cartão" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Validade</label>
+                                    <input type="text" placeholder="MM/AA" maxlength="5" 
+                                           oninput="formatExpiry(this)" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>CVV</label>
+                                    <input type="text" placeholder="123" maxlength="4" 
+                                           oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FORMULÁRIO PIX -->
+                        <div class="payment-form" id="pixForm">
+                            <div class="pix-section">
+                                <h4>📱 Pagamento via PIX</h4>
+                                <p>Escaneie o QR Code ou copie a chave PIX</p>
+                                
+                                <div class="pix-qr-code">
+                                    <div>QR CODE</div>
+                                    <div>PIX</div>
+                                </div>
+                                
+                                <div class="pix-key">
+                                    <strong>Chave PIX:</strong> bellavita.salao@pix.com.br
+                                    <button class="copy-pix-btn" onclick="copyPixKey()">Copiar</button>
+                                </div>
+                                
+                                <p><strong>💰 Total com desconto PIX: 
+                                    <span id="pixDiscountTotal">R$ 0,00</span></strong></p>
+                                
+                                <div style="background: #e8f5e8; padding: 1rem; border-radius: 10px; margin: 1rem 0;">
+                                    <p><strong>📝 Instruções:</strong></p>
+                                    <ol style="text-align: left; margin-left: 2rem;">
+                                        <li>Faça o PIX com o valor exato</li>
+                                        <li>Envie o comprovante pelo WhatsApp: (11) 99999-9999</li>
+                                        <li>Aguarde a confirmação</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="checkout-btn" onclick="finalizePurchase()" id="checkoutBtn" disabled>
+                        🔒 Finalizar Compra
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>✨ ACPO TERAPIA CAPILAR</h3>
+                    <p>Transformando beleza em arte há mais de 10 anos</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">📘</a>
+                        <a href="#" class="social-link">📷</a>
+                        <a href="#" class="social-link">💬</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>📍 Localização</h3>
+                    <p>Rua Waldemar Fianco, 123</p>
+                    <p>Centro - Centro, ES</p>
+                    <p>CEP: 29850-000</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>📞 Contato</h3>
+                    <p>WhatsApp: (27) 99694-2124</p>
+                    <p>Email: contato@bellavita.com.br</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>🕒 Funcionamento</h3>
+                    <p>Segunda a Sexta: 9h às 19h</p>
+                    <p>Sábado: 9h às 17h</p>
+                </div>
+            </div>
+            
+            <div style="border-top: 1px solid #555; padding-top: 2rem; margin-top: 2rem;">
+                <p>© 2025 ACPO Terapia Capilar. Todos os direitos reservados.</p>
+                <p>Desenvolvido com 💜 para sua beleza</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // SISTEMA DE CARRINHO COMPLETO
+        let cart = [];
+        let selectedPaymentMethod = '';
+
+// ADICIONAR PRODUTO AO CARRINHO
+        function addToCart(name, price, category, icon, button) {
+            const quantityInput = button.parentElement.querySelector('.quantity-input');
+            const quantity = parseInt(quantityInput.value);
+            
+            const existingItemIndex = cart.findIndex(item => item.name === name);
+            
+            if (existingItemIndex > -1) {
+                cart[existingItemIndex].quantity += quantity;
+            } else {
+                cart.push({
+                    id: Date.now(),
+                    name: name,
+                    price: price,
+                    category: category,
+                    icon: icon,
+                    quantity: quantity
+                });
+            }
+            
+            updateCartUI();
+            showAddToCartSuccess(button);
+            quantityInput.value = 1; // Reset quantity
+        }
+
+        // ALTERAR QUANTIDADE NO SELETOR
+        function changeQuantity(button, delta) {
+            const input = button.parentElement.querySelector('.quantity-input');
+            let currentValue = parseInt(input.value);
+            let newValue = currentValue + delta;
+            
+            if (newValue >= 1) {
+                input.value = newValue;
+            }
+        }
+
+// ALTERAR QUANTIDADE NO CARRINHO
+        function changeCartQuantity(id, delta) {
+            const itemIndex = cart.findIndex(item => item.id === id);
+            if (itemIndex > -1) {
+                cart[itemIndex].quantity += delta;
+                if (cart[itemIndex].quantity <= 0) {
+                    removeFromCart(id);
+                } else {
+                    updateCartUI();
+                }
+            }
+        }
+
+// REMOVER ITEM DO CARRINHO
+        function removeFromCart(id) {
+            cart = cart.filter(item => item.id !== id);
+            updateCartUI();
+        }
+
+// ATUALIZAR INTERFACE DO CARRINHO
+        function updateCartUI() {
+            const cartCount = document.getElementById('cartCount');
+            const cartEmpty = document.getElementById('cartEmpty');
+            const cartItems = document.getElementById('cartItems');
+            const cartSummary = document.getElementById('cartSummary');
+            const cartTotalAmount = document.getElementById('cartTotalAmount');
+            const cartTotalItems = document.getElementById('cartTotalItems');
+            const pixDiscountTotal = document.getElementById('pixDiscountTotal');
+            
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const totalAmount = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            
+// Atualizar contador do carrinho
+            if (totalItems > 0) {
+                cartCount.style.display = 'flex';
+                cartCount.textContent = totalItems;
+            } else {
+                cartCount.style.display = 'none';
+            }
+            
+// Mostrar/esconder seções
+            if (cart.length === 0) {
+                cartEmpty.style.display = 'block';
+                cartSummary.style.display = 'none';
+                cartItems.innerHTML = '';
+            } else {
+                cartEmpty.style.display = 'none';
+                cartSummary.style.display = 'block';
+                
+// Renderizar itens do carrinho
+                cartItems.innerHTML = cart.map(item => `
+                    <div class="cart-item">
+                        <div class="cart-item-image">${item.icon}</div>
+                        <div class="cart-item-info">
+                            <div class="cart-item-name">${item.name}</div>
+                            <div class="cart-item-category">${item.category}</div>
+                        </div>
+                        <div class="cart-item-controls">
+                            <div class="cart-quantity-controls">
+                                <button class="cart-quantity-btn" onclick="changeCartQuantity(${item.id}, -1)">-</button>
+                                <div class="cart-quantity-display">${item.quantity}</div>
+                                <button class="cart-quantity-btn" onclick="changeCartQuantity(${item.id}, 1)">+</button>
+                            </div>
+                            <div class="cart-item-price">R$ ${(item.price * item.quantity).toFixed(2)}</div>
+                            <button class="remove-item-btn" onclick="removeFromCart(${item.id})">🗑️</button>
+                        </div>
+                    </div>
+                `).join('');
+                
+// Atualizar totais
+                cartTotalAmount.textContent = `R$ ${totalAmount.toFixed(2)}`;
+                cartTotalItems.textContent = `${totalItems} ${totalItems === 1 ? 'item' : 'itens'} no carrinho`;
+                
+// Calcular desconto PIX
+                const pixTotal = totalAmount * 0.95; // 5% de desconto
+                pixDiscountTotal.textContent = `R$ ${pixTotal.toFixed(2)}`;
+            }
+        }
+
+// ALTERNAR CARRINHO
+        function toggleCart() {
+        const cartModal = document.getElementById('cartModal');
+        const isVisible = cartModal.style.display === 'block';
+            
+            if (isVisible) {
+                cartModal.style.display = 'none';
+            } else {
+                cartModal.style.display = 'block';
+                updateCartUI();
+            }
+        }
+
+// SELECIONAR MÉTODO DE PAGAMENTO
+        function selectPaymentMethod(method) {
+            selectedPaymentMethod = method;
+            
+// Remover seleção anterior
+            document.querySelectorAll('.payment-method').forEach(el => {
+                el.classList.remove('selected');
+            });
+            
+            // Adicionar seleção atual
+            document.querySelector(`[data-method="${method}"]`).classList.add('selected');
+            
+// Esconder todos os formulários
+            document.querySelectorAll('.payment-form').forEach(form => {
+                form.classList.remove('active');
+            });
+            
+// Mostrar formulário selecionado
+            document.getElementById(`${method}Form`).classList.add('active');
+            
+// Habilitar botão de checkout
+            document.getElementById('checkoutBtn').disabled = false;
+        }
+
+ // FORMATAÇÃO DE CARTÃO
+        function formatCardNumber(input) {
+            let value = input.value.replace(/\D/g, '');
+            value = value.replace(/(\d{4})(?=\d)/g, '$1 ');
+            input.value = value;
+        }
+
+        function formatExpiry(input) {
+            let value = input.value.replace(/\D/g, '');
+            if (value.length >= 2) {
+                value = value.substring(0, 2) + '/' + value.substring(2, 4);
+            }
+            input.value = value;
+        }
+
+// COPIAR CHAVE PIX
+        function copyPixKey() {
+            const pixKey = 'bellavita.salao@pix.com.br';
+            navigator.clipboard.writeText(pixKey).then(() => {
+                alert('✅ Chave PIX copiada com sucesso!');
+            });
+        }
+
+// FINALIZAR COMPRA
+        function finalizePurchase() {
+            if (cart.length === 0) {
+                alert('❌ Adicione itens ao carrinho antes de finalizar a compra!');
+                return;
+            }
+            
+            if (!selectedPaymentMethod) {
+                alert('❌ Selecione uma forma de pagamento!');
+                return;
+            }
+            
+            const totalAmount = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            
+            let finalAmount = totalAmount;
+            let paymentMethodName = '';
+            
+// Aplicar desconto PIX
+            if (selectedPaymentMethod === 'pix') {
+                finalAmount = totalAmount * 0.95;
+                paymentMethodName = 'PIX (5% desconto)';
+            } else if (selectedPaymentMethod === 'credit') {
+                paymentMethodName = 'Cartão de Crédito';
+            } else if (selectedPaymentMethod === 'debit') {
+                paymentMethodName = 'Cartão de Débito';
+            }
+            
+// Validar formulários
+            const activeForm = document.querySelector('.payment-form.active');
+            if (activeForm && selectedPaymentMethod !== 'pix') {
+                const requiredInputs = activeForm.querySelectorAll('input[required], select[required]');
+                let allValid = true;
+                
+                requiredInputs.forEach(input => {
+                    if (!input.value.trim()) {
+                        allValid = false;
+                        input.style.borderColor = '#ff4757';
+                    } else {
+                        input.style.borderColor = '#ddd';
+                    }
+                });
+                
+                if (!allValid) {
+                    alert('❌ Preencha todos os campos obrigatórios!');
+                    return;
+                }
+            }
+            
+// Simular processamento
+            const checkoutBtn = document.getElementById('checkoutBtn');
+            checkoutBtn.innerHTML = '⏳ Processando...';
+            checkoutBtn.disabled = true;
+            
+            setTimeout(() => {
+// Criar resumo da compra
+                let orderSummary = '🎉 COMPRA REALIZADA COM SUCESSO!\n\n';
+                orderSummary += '📋 RESUMO DO PEDIDO:\n';
+                orderSummary += '─'.repeat(30) + '\n';
+                
+                cart.forEach((item, index) => {
+                    orderSummary += `${index + 1}. ${item.name}\n`;
+                    orderSummary += `   Categoria: ${item.category}\n`;
+                    orderSummary += `   Quantidade: ${item.quantity}x\n`;
+                    orderSummary += `   Valor: R$ ${(item.price * item.quantity).toFixed(2)}\n\n`;
+                });
+                
+                orderSummary += '─'.repeat(30) + '\n';
+                orderSummary += `💰 SUBTOTAL: R$ ${totalAmount.toFixed(2)}\n`;
+                
+                if (selectedPaymentMethod === 'pix') {
+                    orderSummary += `🎁 DESCONTO PIX: -R$ ${(totalAmount - finalAmount).toFixed(2)}\n`;
+                }
+                
+                orderSummary += `✨ TOTAL: R$ ${finalAmount.toFixed(2)}\n`;
+                orderSummary += `💳 PAGAMENTO: ${paymentMethodName}\n`;
+                orderSummary += `📦 ITENS: ${totalItems} ${totalItems === 1 ? 'item' : 'itens'}\n\n`;
+                
+                orderSummary += '📞 PRÓXIMOS PASSOS:\n';
+                orderSummary += '• Para serviços: Entraremos em contato para agendamento\n';
+                orderSummary += '• Para produtos: Preparação para entrega/retirada\n';
+                orderSummary += '• Dúvidas: (11) 99999-9999\n\n';
+                
+                orderSummary += '🙏 Obrigada pela preferência!\n';
+                orderSummary += '✨ Bella Vita Salão de Beleza';
+                
+                alert(orderSummary);
+                
+// Limpar carrinho e fechar modal
+                cart = [];
+                selectedPaymentMethod = '';
+                updateCartUI();
+                toggleCart();
+                
+// Reset botão
+                checkoutBtn.innerHTML = '🔒 Finalizar Compra';
+                checkoutBtn.disabled = true;
+                
+// Reset formulários
+                document.querySelectorAll('.payment-method').forEach(el => {
+                    el.classList.remove('selected');
+                });
+                document.querySelectorAll('.payment-form').forEach(form => {
+                    form.classList.remove('active');
+                });
+                
+            }, 2000);
+        }
+
+// ANIMAÇÃO DE SUCESSO NO BOTÃO
+        function showAddToCartSuccess(button) {
+            const originalText = button.innerHTML;
+            button.innerHTML = '✅ Adicionado!';
+            button.classList.add('added');
+            
+            setTimeout(() => {
+                button.innerHTML = originalText;
+                button.classList.remove('added');
+            }, 2000);
+        }
+
+// SMOOTH SCROLL PARA NAVEGAÇÃO
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+// FECHAR MODAL CLICANDO FORA
+        document.getElementById('cartModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                toggleCart();
+            }
+        });
+
+// VALIDAÇÃO EM TEMPO REAL DOS FORMULÁRIOS
+        document.addEventListener('input', function(e) {
+            if (e.target.matches('input[required]')) {
+                if (e.target.value.trim()) {
+                    e.target.style.borderColor = '#2ed573';
+                } else {
+                    e.target.style.borderColor = '#ddd';
+                }
+            }
+        });
+
+// INICIALIZAÇÃO
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCartUI();
+            
+// Adicionar efeitos de scroll
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('header');
+                if (window.scrollY > 100) {
+                    header.style.background = 'rgba(255, 255, 255, 0.98)';
+                } else {
+                    header.style.background = 'rgba(255, 255, 255, 0.95)';
+                }
+            });
+        });
+
+// ATALHOS DE TECLADO
+        document.addEventListener('keydown', function(e) {
+            // ESC para fechar carrinho
+            if (e.key === 'Escape') {
+                const cartModal = document.getElementById('cartModal');
+                if (cartModal.style.display === 'block') {
+                    toggleCart();
+                }
+            }
+            
+// Ctrl/Cmd + K para abrir carrinho
+            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                e.preventDefault();
+                toggleCart();
+            }
+        });
+
+// SISTEMA DE NOTIFICAÇÕES
+        function showNotification(message, type = 'success') {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background: ${type === 'success' ? '#2ed573' : '#ff4757'};
+                color: white;
+                padding: 1rem 2rem;
+                border-radius: 10px;
+                z-index: 4000;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+                animation: slideIn 0.3s ease;
+            `;
+            notification.textContent = message;
+            
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideIn {
+                    from { transform: translateX(100%); opacity: 0; }
+                    to { transform: translateX(0); opacity: 1; }
+                }
+            `;
+            document.head.appendChild(style);
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+                style.remove();
+            }, 3000);
+        }
+
+        // SISTEMA DE FAVORITOS (OPCIONAL)
+        let favorites = JSON.parse(localStorage.getItem('bellavita_favorites') || '[]');
+
+        function toggleFavorite(productName) {
+            const index = favorites.indexOf(productName);
+            if (index > -1) {
+                favorites.splice(index, 1);
+                showNotification('Removido dos favoritos', 'info');
+            } else {
+                favorites.push(productName);
+                showNotification('Adicionado aos favoritos');
+            }
+            localStorage.setItem('bellavita_favorites', JSON.stringify(favorites));
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+</styles>
